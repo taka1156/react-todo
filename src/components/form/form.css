@@ -1,0 +1,8 @@
+.forms__box {
+  display: flex;
+  flex-direction: column;
+}
+
+.forms__label {
+  text-align: left;
+}

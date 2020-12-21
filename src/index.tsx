@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import routes from './routes/index';
+import Navigation from './components/Navigation/navigation';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Navigation />
+      <Switch>
+        {routes.map((route, i) => (
+          <Route
+            key={`route_${i}`}
+            {...route}
+          />
+        ))}
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
