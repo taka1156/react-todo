@@ -1,15 +1,15 @@
 import React from 'react';
 import { Todo } from 'src/types/todo';
 import './todo.css';
-import FormsComponent from '../../components/forms/forms';
+import FormsComponent from '../../components/Forms/forms';
 import TodosComponent from '../../components/Todos/todos';
 
 const dummyTodo: Todo = {
   startDate: new Date(0),
   finishDate: new Date(-8640000000000000),
   task: 'AtCoderを進める(dummy)',
-  isDone: false
-}
+  isDone: false,
+};
 
 function View() {
   return (
@@ -26,7 +26,7 @@ function View() {
         >
           Learn React
         </a>
-        </main>
+      </main>
     </div>
   );
 }
