@@ -17,7 +17,7 @@ class TodoApp {
     }
   }
 
-  public todoAdd(todo: Todo): void {
+  public addTodo(todo: Todo): void {
     this.todos.push(todo);
   }
 
@@ -35,14 +35,14 @@ class TodoApp {
     return isOK;
   }
 
-  public todoDelete(deleteIndex: number): void {
+  public deleteTodo(deleteIndex: number): void {
     const isDone = this.todos[deleteIndex].isDone;
     if (this.checkFoolControle(isDone)) {
       this.todos = this.todos.filter((todo, i) => deleteIndex !== i);
     }
   }
 
-  public todoTextSearch(searchText: string) {
+  public textSearchTodo(searchText: string) {
     this.todos = this.todos.filter(
       (todo) => todo.task.indexOf(searchText) !== -1
     );
