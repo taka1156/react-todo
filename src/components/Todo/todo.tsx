@@ -1,8 +1,12 @@
 import React from 'react';
 import { Todo } from 'src/types/todo';
+import CheckboxComponent from '../Checkbox/checkbox';
+import ButtonComponent from '../Button/button';
 
 type TodoProps = {
   todo: Todo;
+  onCheck: (index: number) => void;
+  onRemove: (index: number) => void;
 };
 
 function formatDate(date: Date | null) {
@@ -13,17 +17,22 @@ function formatDate(date: Date | null) {
   return new Date(date).toLocaleDateString();
 }
 
-function View(props: TodoProps) {
+function View({todo, onCheck, onRemove }: TodoProps) {
   return (
-    <>
-      <td>{formatDate(props.todo.startDate)}</td>
-      <td>{formatDate(props.todo.finishDate)}</td>
-      <td>{props.todo.task}</td>
-      <td>{props.todo.isDone}</td>
+    <tr>
       <td>
-        <button>x</button>
+        <CheckboxComponent
+          isDone={todo.isDone}
+          onCheck={() => onCheck(todo.index)}
+        />
       </td>
-    </>
+      <td>{formatDate(todo.startDate)}</td>
+      <td>{formatDate(todo.finishDate)}</td>
+      <td>{todo.task}</td>
+      <td>
+        <ButtonComponent btnText="x" onClick={() => onRemove(todo.index)} />
+      </td>
+    </tr>
   );
 }
 

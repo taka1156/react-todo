@@ -1,8 +1,15 @@
 type Todo = {
+  index: number;
   startDate: Date | null;
   finishDate: Date | null;
-  task: String;
+  task: string;
   isDone: boolean;
 };
 
-export { Todo };
+type InputTodo = {
+  startDate: Date | null;
+  finishDate: Date | null;
+  task: string;
+};
+
+export { Todo, InputTodo };
