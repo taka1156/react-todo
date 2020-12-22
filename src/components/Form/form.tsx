@@ -1,44 +1,80 @@
 import React from 'react';
+import { InputTodo } from 'src/types/todo';
+import InputDateComponent from '../InputDate/inputDate';
+import InputTextComponent from '../InputText/inputText';
 import './form.css';
 
 type Props = {
   isSearch: boolean;
+  onAddTodo: (todo: InputTodo) => void;
+  onTextSearch: (searchText: string) => void;
 };
 
-function View(props: Props) {
-  if (!props.isSearch) {
+function View({ isSearch, onAddTodo, onTextSearch }: Props) {
+  let inputTodo: InputTodo = {
+    startDate: null,
+    finishDate: null,
+    task: '',
+  };
+
+  let searchText: string = '';
+
+  const setParentStartDate = (date: Date): void => {
+    inputTodo.startDate = date;
+  };
+
+  const setParentFinishDate = (date: Date): void => {
+    inputTodo.finishDate = date;
+  };
+
+  const setParentTask = (text: string): void => {
+    inputTodo.task = text;
+  };
+
+  const handleSubmitAdd = (e: any): void => {
+    e.preventDefault();
+    onAddTodo(inputTodo);
+  };
+
+  const setParentSearchText = (searchWord: string): void => {
+    searchText = searchWord;
+  };
+
+  const handleSubmitTextSearch = (e: any): void => {
+    e.preventDefault();
+    onTextSearch(searchText);
+  };
+
+  if (!isSearch) {
     return (
-      <>
-        <div className="forms__box">
-          <label className="forms__label" htmlFor="start-day">
-            開始日
-          </label>
-          <input className="forms__input" id="start-day" type="date" />
-        </div>
-        <div className="forms__box">
-          <label className="forms__label" htmlFor="finish-day">
-            終了日
-          </label>
-          <input className="forms__input" id="finish-day" type="date" />
-        </div>
-        <div className="forms__box">
-          <label className="forms__label" htmlFor="task">
-            タスクの内容
-          </label>
-          <input className="forms__input" id="task" type="text" />
-        </div>
-      </>
+      <form className="forms" onSubmit={(e) => handleSubmitAdd(e)}>
+        <InputDateComponent
+          id="startDate"
+          labelText="開始日"
+          setParentDate={setParentStartDate}
+        />
+        <InputDateComponent
+          id="finishDate"
+          labelText="終了日"
+          setParentDate={setParentFinishDate}
+        />
+        <InputTextComponent
+          labelText="タスク内容"
+          setParentText={setParentTask}
+        />
+
+        <input className="forms__submit" type="submit" value="追加" />
+      </form>
     );
   } else {
     return (
-      <>
-        <div className="forms__box">
-          <label className="forms__label" htmlFor="search-text">
-            検索
-          </label>
-          <input className="forms__input" id="search-text" type="text" />
-        </div>
-      </>
+      <form className="forms" onSubmit={(e) => handleSubmitTextSearch(e)}>
+        <InputTextComponent
+          labelText="検索"
+          setParentText={setParentSearchText}
+        />
+        <input className="forms__submit" type="submit" value="検索" />
+      </form>
     );
   }
 }

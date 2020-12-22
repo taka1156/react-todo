@@ -5,9 +5,11 @@ import './todos.css';
 
 type Props = {
   todos: Todo[];
+  onCheck: (index: number) => void;
+  onRemove: (index: number) => void;
 };
 
-function View(props: Props) {
+function View({ todos, onCheck, onRemove }: Props) {
   return (
     <div>
       <table>
@@ -21,11 +23,14 @@ function View(props: Props) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            {props.todos.map((item, i) => (
-              <TodoComponent key={`todo_{i}`} todo={item} />
+            {todos.map((item, i) => (
+              <TodoComponent
+                key={`todo_${i}`}
+                todo={item}
+                onCheck={onCheck}
+                onRemove={onRemove}
+              />
             ))}
-          </tr>
         </tbody>
       </table>
     </div>
