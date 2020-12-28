@@ -27,7 +27,7 @@ function View() {
     setTodos([...app.getTodos()]);
   };
 
-  const seachTodo = (searchText: string): void => {
+  const searchTodo = (searchText: string): void => {
     const filterTodo = app.textSearchTodo(searchText);
     setTodos([...filterTodo]);
   };
@@ -36,7 +36,7 @@ function View() {
     <div className="App">
       <main className="App-body">
         <h1>Todo</h1>
-        <Forms onAddTodo={addTodo} onSearchTodo={seachTodo} />
+        <Forms onAddTodo={addTodo} onSearchTodo={searchTodo} />
         <Todos
           todos={todos}
           onCheck={changeTodo}
