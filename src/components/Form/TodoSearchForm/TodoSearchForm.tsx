@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { InputType } from 'src/types/input';
-import InputTextComponent from '../../BaseInputText/BaseInputText';
+import BaseInputText from '../../BaseInputText/BaseInputText';
 import '../forms.css';
 
 type Props = {
@@ -21,7 +21,7 @@ function View({ onSearchTodo }: Props) {
 
   return (
     <form className="forms" onSubmit={handleSubmit(onSubmit)}>
-      <InputTextComponent
+      <BaseInputText
         id="search"
         name="searchText"
         labelText="検索"
