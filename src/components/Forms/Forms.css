@@ -1,0 +1,10 @@
+.forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 25vh;
+  width: 70vw;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid cornflowerblue;
+}

@@ -1,4 +1,4 @@
-import { Todo, InputTodo } from 'src/types/todo';
+import { Todo } from 'src/types/todo';
 
 class TodoApp {
   private static instance: TodoApp;
@@ -19,7 +19,7 @@ class TodoApp {
     return this.todos;
   };
 
-  private checkInput = (inputTodo: InputTodo): boolean => {
+  private checkInput = (inputTodo: Todo): boolean => {
     if (
       inputTodo.startDate == null ||
       inputTodo.finishDate == null ||
@@ -30,21 +30,17 @@ class TodoApp {
     return true;
   };
 
-  public addTodo = (inputTodo: InputTodo): boolean => {
+  public addTodo = (inputTodo: Todo): boolean => {
     if (this.checkInput(inputTodo)) {
-      const todo: Todo = {
-        ...inputTodo,
-        index: this.todos.length,
-        isDone: false,
-      };
-      this.todos.push(todo);
+      inputTodo.index = this.todos.length;
+      this.todos.push(inputTodo);
       return true;
     }
     alert('入力漏れがあります。');
     return false;
   };
 
-  public changeState = (changeIndex: number):void => {
+  public changeState = (changeIndex: number): void => {
     this.todos[changeIndex].isDone = !this.todos[changeIndex].isDone;
   };
 

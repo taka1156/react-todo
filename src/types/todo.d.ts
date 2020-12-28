@@ -6,10 +6,4 @@ type Todo = {
   isDone: boolean;
 };
 
-type InputTodo = {
-  startDate: Date | null;
-  finishDate: Date | null;
-  task: string;
-};
-
-export { Todo, InputTodo };
+export { Todo };
