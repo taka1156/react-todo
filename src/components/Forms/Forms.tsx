@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Todo } from 'src/types/todo';
-import AddFormComponent from '../Form/TodoAddForm/TodoAddForm';
-import SearchFormComponent from '../Form/TodoSearchForm/TodoSearchForm';
-import ButtonComponent from '../BaseBtn/BaseBtn';
+import AddForm from '../Form/TodoAddForm/TodoAddForm';
+import SearchForm from '../Form/TodoSearchForm/TodoSearchForm';
+import BaseBtn from '../BaseBtn/BaseBtn';
 import './Forms.css';
 
 type Props = {
@@ -20,14 +20,14 @@ function View({ onAddTodo, onSearchTodo }: Props) {
 
   return (
     <div>
-      <ButtonComponent
+      <BaseBtn
         onClick={(e) => modeChange()}
         btnText={!isSearch ? 'タスク検索' : 'タスク追加'}
       />
       {!isSearch ? (
-        <AddFormComponent onAddTodo={onAddTodo} />
+        <AddForm onAddTodo={onAddTodo} />
       ) : (
-        <SearchFormComponent onSearchTodo={onSearchTodo} />
+        <SearchForm onSearchTodo={onSearchTodo} />
       )}
     </div>
   );

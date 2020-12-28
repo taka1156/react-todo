@@ -2,8 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { InputType } from 'src/types/input';
 import { Todo } from 'src/types/todo';
-import InputDateComponent from '../../BaseInputDate/BaseInputDate';
-import InputTextComponent from '../../BaseInputText/BaseInputText';
+import BaseInputDate from '../../BaseInputDate/BaseInputDate';
+import BaseInputText from '../../BaseInputText/BaseInputText';
 import '../forms.css';
 
 type Props = {
@@ -34,21 +34,21 @@ function View({ onAddTodo }: Props) {
 
   return (
     <form className="forms" onSubmit={handleSubmit(onSubmit)}>
-      <InputDateComponent
+      <BaseInputDate
         id="startDate"
         name="startDate"
         labelText="開始日"
         register={register}
         required
       />
-      <InputDateComponent
+      <BaseInputDate
         id="finishDate"
         name="finishDate"
         labelText="終了日"
         register={register}
         required
       />
-      <InputTextComponent
+      <BaseInputText
         id="task"
         name="task"
         labelText="タスク内容"

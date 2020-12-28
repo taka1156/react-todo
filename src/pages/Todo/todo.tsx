@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Todo } from 'src/types/todo';
-import './todo.css';
 import Forms from '../../components/Forms/Forms';
 import Todos from '../../components/TodoTable/TodoTable';
+import './todo.css';
 import { TodoApp } from '../../logic/todoApp';
 
 const app = TodoApp.getInstance();
