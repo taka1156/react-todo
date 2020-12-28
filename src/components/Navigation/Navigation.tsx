@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { routesNav } from '../../constants';
-import './navigation.css';
+import './Navigation.css';
 
 function View() {
   return (

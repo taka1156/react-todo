@@ -1,6 +1,6 @@
 import React from 'react';
 import { InputType } from 'src/types/input';
-import './inputText.css';
+import './BaseInputText.css';
 
 
 function View({ id, name, labelText, register, required }: InputType) {

@@ -1,21 +1,35 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { InputTodo } from 'src/types/todo';
 import { InputType } from 'src/types/input';
-import InputDateComponent from '../../InputDate/inputDate';
-import InputTextComponent from '../../InputText/inputText';
-import './forms.css';
+import { Todo } from 'src/types/todo';
+import InputDateComponent from '../../BaseInputDate/BaseInputDate';
+import InputTextComponent from '../../BaseInputText/BaseInputText';
+import '../forms.css';
 
 type Props = {
-  onAddTodo: (todo: InputTodo) => void;
+  onAddTodo: (todo: Todo) => void;
+};
+
+type InputTodo = {
+  startDate: Date | null;
+  finishDate: Date | null;
+  task: string;
 };
 
 function View({ onAddTodo }: Props) {
   const { register, handleSubmit, reset } = useForm<InputType>();
 
   const onSubmit = (data: InputTodo) => {
-    onAddTodo(data);
-    reset()
+    const todo: Todo = {
+      index: 0,
+      startDate: data.startDate,
+      finishDate: data.finishDate,
+      task: data.task,
+      isDone: false,
+    };
+
+    onAddTodo(todo);
+    reset();
   };
 
   return (

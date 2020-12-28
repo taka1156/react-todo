@@ -1,20 +1,22 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { InputType } from 'src/types/input';
-import InputTextComponent from '../../InputText/inputText';
-import './forms.css';
+import InputTextComponent from '../../BaseInputText/BaseInputText';
+import '../forms.css';
 
 type Props = {
-  onTextSearch: (searchText: string) => void;
+  onSearchTodo: (searchText: string) => void;
 };
 
-function View({ onTextSearch }: Props) {
+type InputSearch = {
+  searchText: string;
+};
+
+function View({ onSearchTodo }: Props) {
   const { register, handleSubmit } = useForm<InputType>();
 
-  const onSubmit = (data: string | any) => {
-    if (typeof data === 'string') {
-      onTextSearch(data);
-    }
+  const onSubmit = (data: InputSearch) => {
+    onSearchTodo(data.searchText);
   };
 
   return (

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Todo } from 'src/types/todo';
-import CheckboxComponent from '../Checkbox/checkbox';
-import ButtonComponent from '../Button/button';
+import BaseInputCheckbox from '../BaseInputCheckbox/BaseInputCheckbox';
+import BaseBtn from '../BaseBtn/BaseBtn';
+import './TodoItem.css'
 
-type TodoProps = {
+type Props = {
   todo: Todo;
   onCheck: (index: number) => void;
   onRemove: (index: number) => void;
@@ -17,11 +18,11 @@ function formatDate(date: Date | null) {
   return new Date(date).toLocaleDateString();
 }
 
-function View({todo, onCheck, onRemove }: TodoProps) {
+function View({todo, onCheck, onRemove }: Props) {
   return (
     <tr>
       <td>
-        <CheckboxComponent
+        <BaseInputCheckbox
           isDone={todo.isDone}
           onCheck={() => onCheck(todo.index)}
         />
@@ -30,7 +31,7 @@ function View({todo, onCheck, onRemove }: TodoProps) {
       <td>{formatDate(todo.finishDate)}</td>
       <td>{todo.task}</td>
       <td>
-        <ButtonComponent btnText="x" onClick={() => onRemove(todo.index)} />
+        <BaseBtn btnText="x" onClick={() => onRemove(todo.index)} />
       </td>
     </tr>
   );

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
 import routes from './routes/index';
-import Navigation from './components/Navigation/navigation';
+import Navigation from './components/Navigation/Navigation';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './checkbox.css';
+import './BaseInputCheckbox.css';
 
 type Props = {
   isDone: boolean;
