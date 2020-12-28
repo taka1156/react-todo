@@ -7,7 +7,7 @@ import { TodoApp } from '../../logic/todoApp';
 
 const app = TodoApp.getInstance();
 
-function View() {
+const View = (): JSX.Element => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo = (todo: Todo): void => {
@@ -37,11 +37,7 @@ function View() {
       <main className="App-body">
         <h1>Todo</h1>
         <Forms onAddTodo={addTodo} onSearchTodo={searchTodo} />
-        <Todos
-          todos={todos}
-          onCheck={changeTodo}
-          onRemove={deleteTodo}
-        />
+        <Todos todos={todos} onCheck={changeTodo} onRemove={deleteTodo} />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -53,6 +49,6 @@ function View() {
       </main>
     </div>
   );
-}
+};
 
 export default View;

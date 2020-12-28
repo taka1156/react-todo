@@ -10,7 +10,7 @@ type Props = {
   onSearchTodo: (searchText: string) => void;
 };
 
-function View({ onAddTodo, onSearchTodo }: Props) {
+function View({ onAddTodo, onSearchTodo }: Props): JSX.Element {
   const [isSearch, stateChange] = useState(false);
 
   const modeChange = () => {
@@ -21,7 +21,7 @@ function View({ onAddTodo, onSearchTodo }: Props) {
   return (
     <div>
       <BaseBtn
-        onClick={(e) => modeChange()}
+        onClick={() => modeChange()}
         btnText={!isSearch ? 'タスク検索' : 'タスク追加'}
       />
       {!isSearch ? (

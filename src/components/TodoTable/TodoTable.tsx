@@ -9,7 +9,7 @@ type Props = {
   onRemove: (index: number) => void;
 };
 
-function View({ todos, onCheck, onRemove }: Props) {
+function View({ todos, onCheck, onRemove }: Props): JSX.Element {
   return (
     <div>
       <table>

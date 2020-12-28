@@ -12,10 +12,7 @@ ReactDOM.render(
       <Navigation />
       <Switch>
         {routes.map((route, i) => (
-          <Route
-            key={`route_${i}`}
-            {...route}
-          />
+          <Route key={`route_${i}`} {...route} />
         ))}
       </Switch>
     </BrowserRouter>

@@ -1,7 +1,7 @@
 ul {
-  list-style-type: none;
   padding: 0;
   margin: 0;
+  list-style-type: none;
 }
 
 a {
@@ -17,11 +17,11 @@ a {
 .nav__item {
   width: 100%;
   height: 100%;
-  border: 1px solid white;
-  margin: 0 auto;
   padding: 0;
+  margin: 0 auto;
   text-align: center;
   background-color: cornflowerblue;
+  border: 1px solid white;
 }
 
 .nav__item--link {

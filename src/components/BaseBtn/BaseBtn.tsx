@@ -2,14 +2,13 @@ import React from 'react';
 import './BaseBtn.css';
 
 type Props = {
-  className?: string;
   btnText: string;
-  onClick: (e: any) => void;
+  onClick: () => void;
 };
 
-function View({ className, btnText, onClick }: Props) {
+function View({ btnText, onClick }: Props): JSX.Element {
   return (
-    <button className={`${className}`} onClick={onClick}>
+    <button className="base-btn" onClick={onClick}>
       {btnText}
     </button>
   );

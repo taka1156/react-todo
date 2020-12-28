@@ -7,6 +7,6 @@ type Route = {
 type RouteNav = {
   name: string;
   path: string;
-}
+};
 
 export { Route, RouteNav };

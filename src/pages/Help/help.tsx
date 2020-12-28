@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../assets/img/logo.svg';
 import './help.css';
 
-function View() {
+const View = (): JSX.Element => {
   return (
     <div className="App">
       <header className="App-header">
@@ -19,6 +19,6 @@ function View() {
       </header>
     </div>
   );
-}
+};
 
 export default View;
