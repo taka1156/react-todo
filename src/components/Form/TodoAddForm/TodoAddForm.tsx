@@ -16,7 +16,7 @@ type InputTodo = {
   task: string;
 };
 
-function View({ onAddTodo }: Props) {
+function View({ onAddTodo }: Props): JSX.Element {
   const { register, handleSubmit, reset } = useForm<InputType>();
 
   const onSubmit = (data: InputTodo) => {
@@ -56,7 +56,7 @@ function View({ onAddTodo }: Props) {
         required
       />
 
-      <input className="forms__submit" type="submit" value="追加" />
+      <input type="submit" className="forms__submit" value="追加" />
     </form>
   );
 }

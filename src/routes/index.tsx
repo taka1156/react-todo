@@ -1,4 +1,5 @@
-import { Route } from '../../src/types/index';
+import React from 'react';
+import { Route } from 'src/types/index';
 import Help from '../pages/Help/help';
 import Todo from '../pages/Todo/todo';
 

@@ -4,7 +4,9 @@ class TodoApp {
   private static instance: TodoApp;
   todos: Todo[] = [];
 
-  private constructor() {}
+  private constructor() {
+    //...
+  }
 
   public static getInstance(): TodoApp {
     if (this.instance == null) {
@@ -45,7 +47,7 @@ class TodoApp {
   };
 
   private checkFoolControle = (isDone: boolean): boolean => {
-    //　すでに達成済み
+    // すでに達成済み
     if (isDone) return true;
     // 達成してないのに消そうとしている
     const isOK = window.confirm(
@@ -62,7 +64,9 @@ class TodoApp {
   };
 
   public textSearchTodo = (searchText: string): Todo[] => {
-    const FILTER_TODOS = this.todos.filter((todo) => todo.task.indexOf(searchText) !== -1);
+    const FILTER_TODOS = this.todos.filter(
+      todo => todo.task.indexOf(searchText) !== -1
+    );
 
     if (FILTER_TODOS.length > 0) {
       return FILTER_TODOS;

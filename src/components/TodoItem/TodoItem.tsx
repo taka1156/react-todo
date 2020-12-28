@@ -2,7 +2,7 @@ import React from 'react';
 import { Todo } from 'src/types/todo';
 import BaseInputCheckbox from '../BaseInputCheckbox/BaseInputCheckbox';
 import BaseBtn from '../BaseBtn/BaseBtn';
-import './TodoItem.css'
+import './TodoItem.css';
 
 type Props = {
   todo: Todo;
@@ -10,7 +10,7 @@ type Props = {
   onRemove: (index: number) => void;
 };
 
-function formatDate(date: Date | null) {
+function formatDate(date: Date | null): string {
   /**
    * 日付の形式を変える
    */
@@ -18,9 +18,9 @@ function formatDate(date: Date | null) {
   return new Date(date).toLocaleDateString();
 }
 
-function View({todo, onCheck, onRemove }: Props) {
+function View({ todo, onCheck, onRemove }: Props): JSX.Element {
   return (
-    <tr>
+    <tr className="todo-table-item">
       <td>
         <BaseInputCheckbox
           isDone={todo.isDone}

@@ -14,6 +14,4 @@ type InputType = React.DetailedHTMLProps<
   register: ({ required }: { required?: boolean }) => RefReturn;
 };
 
-export {
-  InputType,
-};
+export { InputType };

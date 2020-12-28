@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { routesNav } from '../../constants';
 import './Navigation.css';
 
-function View() {
+function View(): JSX.Element {
   return (
     <div>
       <nav>
