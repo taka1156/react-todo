@@ -12,4 +12,8 @@ type InputTodo = {
   task: string;
 };
 
-export { Todo, InputTodo };
+type InputSearch = {
+  searchText: string;
+};
+
+export { Todo, InputTodo, InputSearch };

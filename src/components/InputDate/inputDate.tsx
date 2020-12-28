@@ -1,25 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { InputType } from 'src/types/input';
 import './inputDate.css';
 
-type Props = {
-  id: string;
-  labelText: string;
-  setParentDate: (date: Date) => void;
-};
-
-const convetDateToIso = (d: Date): string => {
-  const shift = d.getTime() + 9 * 60 * 60 * 1000;
-  const time = new Date(shift).toISOString().split('.')[0];
-  return time;
-};
-
-function View({ id, labelText, setParentDate }: Props) {
-  const [date, setDate] = useState(convetDateToIso(new Date()));
-
-  const handleChange = (e: any): void => {
-    setDate(e.target.value);
-    setParentDate(e.target.value);
-  };
+function View({ id, name, labelText, register, required }: InputType) {
 
   return (
     <div className="forms__box">
@@ -27,11 +10,11 @@ function View({ id, labelText, setParentDate }: Props) {
         {labelText}
       </label>
       <input
-        className="forms__input"
         id={id}
+        name={name}
         type="date"
-        value={date}
-        onChange={(e) => handleChange(e)}
+        className="forms__input"
+        ref={register({ required })}
       />
     </div>
   );

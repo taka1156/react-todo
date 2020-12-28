@@ -8,13 +8,6 @@ import { InputTodo } from 'src/types/todo';
 
 const app = TodoApp.getInstance();
 
-/*const dummyTodo: Todo = {
-  startDate: new Date(0),
-  finishDate: new Date(-8640000000000000),
-  task: 'AtCoderを進める(dummy)',
-  isDone: false,
-};*/
-
 function View() {
   const [todos, setTodos] = useState<Todo[]>([]);
 

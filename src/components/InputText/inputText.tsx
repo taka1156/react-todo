@@ -1,30 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { InputType } from 'src/types/input';
 import './inputText.css';
 
-type Props = {
-  labelText: string;
-  setParentText: (text: string) => void;
-};
 
-function View({ labelText, setParentText }: Props) {
-  const [text, setText] = useState('');
-
-  const handleChange = (e: any): void => {
-    setText(e.target.value);
-    setParentText(e.target.value);
-  };
-
+function View({ id, name, labelText, register, required }: InputType) {
   return (
     <div className="forms__box">
-      <label className="forms__label" htmlFor="task">
+      <label className="forms__label" htmlFor={id}>
         {labelText}
       </label>
       <input
-        className="forms__input"
-        id="task"
+        id={id}
+        name={name}
         type="text"
-        value={text}
-        onChange={(e) => handleChange(e)}
+        className="forms__input"
+        ref={register({ required })}
       />
     </div>
   );

@@ -31,6 +31,7 @@ class TodoApp {
   };
 
   public addTodo = (inputTodo: InputTodo): boolean => {
+    console.log(inputTodo)
     if (this.checkInput(inputTodo)) {
       const todo: Todo = {
         ...inputTodo,
@@ -44,7 +45,7 @@ class TodoApp {
     return false;
   };
 
-  public changeState = (changeIndex: number):void => {
+  public changeState = (changeIndex: number): void => {
     this.todos[changeIndex].isDone = !this.todos[changeIndex].isDone;
   };
 
