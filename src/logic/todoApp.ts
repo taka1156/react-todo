@@ -62,7 +62,13 @@ class TodoApp {
   };
 
   public textSearchTodo = (searchText: string): Todo[] => {
-    return this.todos.filter((todo) => todo.task.indexOf(searchText) !== -1);
+    const FILTER_TODOS = this.todos.filter((todo) => todo.task.indexOf(searchText) !== -1);
+
+    if (FILTER_TODOS.length > 0) {
+      return FILTER_TODOS;
+    } else {
+      return this.todos;
+    }
   };
 }
 
