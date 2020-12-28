@@ -13,10 +13,15 @@ type Props = {
 function View({ onAddTodo, onSearchTodo }: Props) {
   const [isSearch, stateChange] = useState(false);
 
+  const modeChange = () => {
+    stateChange(!isSearch);
+    onSearchTodo(''); //初期化
+  };
+
   return (
     <div>
       <ButtonComponent
-        onClick={(e) => stateChange(!isSearch)}
+        onClick={(e) => modeChange()}
         btnText={!isSearch ? 'タスク検索' : 'タスク追加'}
       />
       {!isSearch ? (
