@@ -5,13 +5,12 @@ type RefReturn =
   | null
   | undefined;
 
-type InputType = React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
-> & {
+type InputType = {
   id: string;
+  name: string;
   labelText: string;
-  register: ({ required }: { required?: boolean }) => RefReturn;
+  type: string;
+  register: () => RefReturn;
 };
 
 export { InputType };

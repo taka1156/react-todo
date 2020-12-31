@@ -6,12 +6,12 @@ type Props = {
   onClick: () => void;
 };
 
-function View({ btnText, onClick }: Props): JSX.Element {
+const View = ({ btnText, onClick }: Props): JSX.Element => {
   return (
     <button className="base-btn" onClick={onClick}>
       {btnText}
     </button>
   );
-}
+};
 
 export default View;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { routesNav } from '../../constants';
 import './Navigation.css';
 
-function View(): JSX.Element {
+const View = (): JSX.Element => {
   return (
     <div>
       <nav>
@@ -19,6 +19,6 @@ function View(): JSX.Element {
       </nav>
     </div>
   );
-}
+};
 
 export default View;

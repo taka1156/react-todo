@@ -1,12 +1,12 @@
-.forms__box {
+.form__box {
   display: flex;
   flex-direction: column;
 }
 
-.forms__label {
+.form__label {
   text-align: left;
 }
 
-.forms__submit {
-  margin: 10px;
+.form__input {
+  font-size: 16px;
 }

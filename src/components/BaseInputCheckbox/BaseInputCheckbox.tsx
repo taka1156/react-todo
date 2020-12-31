@@ -6,15 +6,15 @@ type Props = {
   onCheck: () => void;
 };
 
-function View({ isDone, onCheck }: Props): JSX.Element {
+const View = ({ isDone, onCheck }: Props): JSX.Element => {
   return (
     <input
-      type="checkbox"
       className="base-input-checkbox"
+      type="checkbox"
       checked={isDone}
       onChange={onCheck}
     />
   );
-}
+};
 
 export default View;
