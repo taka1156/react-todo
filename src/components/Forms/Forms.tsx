@@ -10,10 +10,10 @@ type Props = {
   onSearchTodo: (searchText: string) => void;
 };
 
-function View({ onAddTodo, onSearchTodo }: Props): JSX.Element {
+const View = ({ onAddTodo, onSearchTodo }: Props): JSX.Element => {
   const [isSearch, stateChange] = useState(false);
 
-  const modeChange = () => {
+  const modeChange = (): void => {
     stateChange(!isSearch);
     onSearchTodo(''); //初期化
   };
@@ -31,6 +31,6 @@ function View({ onAddTodo, onSearchTodo }: Props): JSX.Element {
       )}
     </div>
   );
-}
+};
 
 export default View;

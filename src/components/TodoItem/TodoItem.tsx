@@ -18,7 +18,7 @@ function formatDate(date: Date | null): string {
   return new Date(date).toLocaleDateString();
 }
 
-function View({ todo, onCheck, onRemove }: Props): JSX.Element {
+const View = ({ todo, onCheck, onRemove }: Props): JSX.Element => {
   return (
     <tr className="todo-table-item">
       <td>
@@ -35,6 +35,6 @@ function View({ todo, onCheck, onRemove }: Props): JSX.Element {
       </td>
     </tr>
   );
-}
+};
 
 export default View;

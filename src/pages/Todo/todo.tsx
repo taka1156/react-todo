@@ -11,10 +11,8 @@ const View = (): JSX.Element => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo = (todo: Todo): void => {
-    const isSuccess = app.addTodo(todo);
-    if (isSuccess) {
-      setTodos([...app.getTodos()]);
-    }
+    app.addTodo(todo);
+    setTodos([...app.getTodos()]);
   };
 
   const deleteTodo = (index: number): void => {

@@ -2,27 +2,27 @@ import React from 'react';
 import { InputType } from 'src/types/input';
 import './BaseInputText.css';
 
-function View({
+const View = ({
   id,
   name,
   labelText,
+  type,
   register,
-  required,
-}: InputType): JSX.Element {
+}: InputType): JSX.Element => {
   return (
-    <div className="forms__box">
-      <label className="forms__label" htmlFor={id}>
+    <div className="form__box">
+      <label className="form__label" htmlFor={id}>
         {labelText}
       </label>
       <input
+        className="form__input"
         id={id}
         name={name}
-        type="text"
-        className="forms__input"
-        ref={register({ required })}
+        type={type}
+        ref={register}
       />
     </div>
   );
-}
+};
 
 export default View;

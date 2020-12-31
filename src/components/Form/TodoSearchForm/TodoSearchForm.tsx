@@ -12,10 +12,10 @@ type InputSearch = {
   searchText: string;
 };
 
-function View({ onSearchTodo }: Props): JSX.Element {
+const View = ({ onSearchTodo }: Props): JSX.Element => {
   const { register, handleSubmit } = useForm<InputType>();
 
-  const onSubmit = (data: InputSearch) => {
+  const onSubmit = (data: InputSearch): void => {
     onSearchTodo(data.searchText);
   };
 
@@ -25,12 +25,12 @@ function View({ onSearchTodo }: Props): JSX.Element {
         id="search"
         name="searchText"
         labelText="検索"
+        type="text"
         register={register}
-        required
       />
-      <input type="submit" className="forms__submit" value="検索" />
+      <input className="forms__submit" type="submit" value="検索" />
     </form>
   );
-}
+};
 
 export default View;

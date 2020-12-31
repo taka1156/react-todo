@@ -21,25 +21,9 @@ class TodoApp {
     return this.todos;
   };
 
-  private checkInput = (inputTodo: Todo): boolean => {
-    if (
-      inputTodo.startDate == null ||
-      inputTodo.finishDate == null ||
-      inputTodo.task === ''
-    ) {
-      return false;
-    }
-    return true;
-  };
-
-  public addTodo = (inputTodo: Todo): boolean => {
-    if (this.checkInput(inputTodo)) {
-      inputTodo.index = this.todos.length;
-      this.todos.push(inputTodo);
-      return true;
-    }
-    alert('入力漏れがあります。');
-    return false;
+  public addTodo = (inputTodo: Todo): void => {
+    inputTodo.index = this.todos.length;
+    this.todos.push(inputTodo);
   };
 
   public changeState = (changeIndex: number): void => {
