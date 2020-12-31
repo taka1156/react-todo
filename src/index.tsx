@@ -4,12 +4,13 @@ import reportWebVitals from './reportWebVitals';
 import routes from './routes/index';
 import Navigation from './components/Navigation/Navigation';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { routesNav } from 'src/constants';
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Navigation />
+      <Navigation routesNav={routesNav} />
       <Switch>
         {routes.map((route, i) => (
           <Route key={`route_${i}`} {...route} />

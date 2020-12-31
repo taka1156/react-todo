@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { routesNav } from '../../constants';
+import { RouteNav } from 'src/types';
 import './Navigation.css';
 
-const View = (): JSX.Element => {
+type Props = {
+  routesNav: RouteNav[];
+};
+
+const View = ({ routesNav }: Props): JSX.Element => {
   return (
     <div>
       <nav>
